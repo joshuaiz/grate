@@ -1,5 +1,7 @@
 <img src="https://studio.bio/images/logo_sm.svg" width=96 />
+
 # Grate
+
 A super-minimal WordPress starter theme with CSS Grid for developers.
 
 ## What is Grate?
