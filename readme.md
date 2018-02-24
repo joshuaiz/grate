@@ -25,25 +25,25 @@ Take this example HTML layout:
 
 	<div id="container">
 		<header>
-			<div id="inner-header" class="clearfix">
+            		<div id="inner-header" class="clearfix">
 				<div id="logo"><img src="logo.png" /></div>
-				<h1><?php the_title(); ?></h1>
+					<h1><?php the_title(); ?></h1>
 				<nav></nav>
 			</div>
 		</header>
-	    <div id="content">
-	        <div id="inner-content" class="clearfix">
-			    <main id="main" class="clearfix">
-				    <article class="clearfix">
-					    <?php the_content(); ?>
-				    </article>
-			    </main>
-			    <aside class="sidebar clearfix">
-			        <div id="inner-sidebar" class="clearfix">
-					   <?php get_sidebar(); ?>
-				    </div>
+		<div id="content">
+			<div id="inner-content" class="clearfix">
+				<main id="main" class="clearfix">
+					<article class="clearfix">
+						<?php the_content(); ?>
+					</article>
+				</main>
+				<aside class="sidebar clearfix">
+					<div id="inner-sidebar" class="clearfix">
+						<?php get_sidebar(); ?>
+					</div>
 				</aside>
-		    </div>
+			</div>
 		</div>
 		<footer>
 			<div id="inner-footer" class="clearfix">
