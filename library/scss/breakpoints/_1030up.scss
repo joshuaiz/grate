@@ -1,0 +1,15 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+
+#inner-header, #inner-footer {
+    margin: 0 auto;
+    max-width: 1170px;
+}

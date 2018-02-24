@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<img src="https://studio.bio/images/logo_sm.svg" width=96 />
+#Grate
+A super-minimal WordPress starter theme with CSS Grid for developers.
+
+<p>##What is Grate?
+Grate is a fork of <a href="https://github.com/joshuaiz/plate">Plate</a> that uses explicit semantic HTML markup with CSS Grid.</p>
+
+<p>Grid + Plate = <strong>Grate</strong></p>
+
+<p>###tl:dr;
+We need to restructure our markup, stripping it down to functional HTML components to work with CSS Grid the right way.</p>
+
+<p>###A little preface on CSS Grid
+CSS Grid is a major milestone for CSS and web development in general and it is finally ready. Yet, to <em>really</em> use it properly we can&#8217;t just assign some new parameters to existing markup in our CSS. Well, we <strong>could</strong>, but we shouldn&#8217;t. Why not? <em>CSS Grid changes the way we should think about how our HTML is structured.</em></p>
+
+<p>What does that mean? Well, for the entire history of the web, we have been using extraneous markup just to contain all of our elements that we need to arrange in our layouts, whether we are using floats, or more recently, Flexbox. Flexbox is great (and it works alongside CSS Grid) however it only works in one direction. What&#8217;s more, to use Flexbox and floats we need to insert wrapper elements in our HTML to contain the child elements we want to align that are totally unrelated to the function of the document.</p>
+
+<p>If you&#8217;ve made the move from floats to Flexbox, you&#8217;ll notice the clearfix hack and flexbox do not play nicely with each other. You&#8217;ll get all kinds of weird behavior that the clearfix hack was supposed to fix in the first place. Super no bueno.</p>
+
+<p>These extra containers lead to divitis, are woefully unsemantic and now, <em>are totally unnecessary</em>.</p>
+
+<p>Take this example HTML layout:</p>
+
+<pre><code>&lt;div id=&quot;container&quot;&gt;
+	&lt;header&gt;
+		&lt;div id=&quot;inner-header&quot; class=&quot;clearfix&quot;&gt;
+			&lt;div id=&quot;logo&quot;&gt;&lt;img src=&quot;logo.png&quot; /&gt;&lt;/div&gt;
+			&lt;h1&gt;&lt;?php the_title(); ?&gt;&lt;/h1&gt;
+			&lt;nav&gt;&lt;/nav&gt;
+		&lt;/div&gt;
+	&lt;/header&gt;
+    &lt;div id=&quot;content&quot;&gt;
+        &lt;div id=&quot;inner-content&quot; class=&quot;clearfix&quot;&gt;
+		    &lt;main id=&quot;main&quot; class=&quot;clearfix&quot;&gt;
+			    &lt;article class=&quot;clearfix&quot;&gt;
+				    &lt;?php the_content(); ?&gt;
+			    &lt;/article&gt;
+		    &lt;/main&gt;
+		    &lt;aside class=&quot;sidebar clearfix&quot;&gt;
+		        &lt;div id=&quot;inner-sidebar&quot; class=&quot;clearfix&quot;&gt;
+				   &lt;?php get_sidebar(); ?&gt;
+			    &lt;/div&gt;
+			&lt;/aside&gt;
+	    &lt;/div&gt;
+	&lt;/div&gt;
+	&lt;footer&gt;
+		&lt;div id=&quot;inner-footer&quot; class=&quot;clearfix&quot;&gt;
+			&lt;p&gt;© 2018 Site Title.&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/footer&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>The <code>#content</code>, <code>#inner-header</code>, <code>#inner-content</code>, <code>#inner-sidebar</code>, and <code>#inner-footer</code> divs are <strong>only</strong> there to be wrappers to contain floats or be flexbox wrappers. They don&#8217;t tell us anything about what is in them and really just muddy up your markup.</p>
+
+<p><strong>Clearfix is also super hacky.</strong> While it works well enough, it never felt right to me. It solved a very real layout problem but in the process adds extra fluff to the markup. We don&#8217;t need it anymore. For years, all of these hacky bits and extra divs is how we have been structuring our markup just to make it work.</p>
+
+<p>Until now, most of our job as web designers is making boxes around other boxes, then adding hacks until the boxes do what we want. What a mess!</p>
+
+<p>It&#8217;s time to move on.</p>
+
+<p>With CSS Grid, we can have a much simpler semantic layout like this:</p>
+
+<pre><code>&lt;div id=&quot;container&quot; class=&quot;grid&quot;&gt;
+    &lt;header&gt;
+        &lt;h1&gt;&lt;?php the_title(); ?&gt;&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;?php if (have_posts()) : while (have_posts()) : the_post(); ?&gt;
+            &lt;article&gt;&lt;?php the_content(); ?&gt;&lt;/article&gt;
+        &lt;?php endwhile; endif; ?&gt;
+    &lt;/main&gt;
+    &lt;aside&gt;
+        &lt;?php get_sidebar(); ?&gt;
+    &lt;/aside&gt;
+    &lt;footer&gt;
+        &lt;small&gt;© 2018 &lt;?php get_bloginfo('name'); ?&gt;&lt;/small&gt;
+    &lt;/footer&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Anyone can read this and know exactly what is going on. This makes sense just as a <em>document</em>, without any rendering at all. What&#8217;s great is this structure is fully accessible and without any extra markup, the styles are now functionally completely independent.</p>
+
+<p>We can keep this simple structure and use CSS Grid to do all the heavy lifting for our layout(s) with a few lines of code. No hacks, no calc, no floats. Boom.</p>
+
+<p>###So what does this mean for Grate?
+When I initially forked Plate to create Grate, it became apparent really quickly that I would have to completely restructure the HTML in the theme templates, stripping it down to only the actual functional components.</p>
+
+<p>####Liberate the markup!
+With modular, component-based development coming into its own, breaking down the HTML markup into its semantic, functional components is an imperative. Most WordPress sites are not simply blogs and they need to be flexible enough to adapt to any templating system or layout, while still being responsive.</p>
+
+<p>Grate is built with basic, functional HTML components that strip out many of the extra container divs, keeping the markup simple and adaptable. It comes with a default structure much like the example above but with only the base elements, these can be easily swapped out, rearranged or removed completely. Starting with this foundation is good for mobile first, accessibility and SEO at the same time.</p>
+
+<p>Of course developers will need to add their own custom content components to these depending on the nature of the content they want to display. But now, there is (almost) nothing to strip away - the theme is about as agnostic as it can be.</p>
+
+<p>All that said, for Grate, I&#8217;ve left in the #inner-header and #inner-footer divs so we can use max-width on the actual header and footer content (using the .wrap class) keeping the outer header and footer elements full width. These elements could be removed once the subgrid property is fully adopted. For now, we still need some interstitial HTML but it won&#8217;t be long until the major browsers adopt subgrids.</p>
+
+<p>Just like before, you can use custom page templates to create different layouts. Yet, by using CSS Grid and subgrids, the possibilities are endless and you probably don&#8217;t need to use as many templates as before. Think about your page templates in a modular, component-based way and with just a couple page setups, you can cover all of the layouts your site needs. If you start out with a good grid to begin with, you could probably handle multiple layouts with just a few lines of scss.</p>
+
+<p>##Notes:</p>
+
+<p>This is a super early alpha release so I would test this theme out before using it on a production site. It is subject to change a lot and eventually, some of the things in Grate may get merged into a future release of Plate.</p>
+
+<p>I&#8217;ve left some basic css in to set up the logo, site title, nav and background colors for the grid template areas; just remove these after you see your grid in action.</p>
+
+</body>
+</html>
+
