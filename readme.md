@@ -90,7 +90,7 @@ We can keep this simple structure and use CSS Grid to do all the heavy lifting f
 
 ```scss  
     // Flexbox fallback for IE10 and Edge
-    .container {
+    #container {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
