@@ -159,7 +159,6 @@ We can keep this simple structure and use CSS Grid to do all the heavy lifting f
 
     }
 ```
- 
 ### So what does this mean for Grate?
 When I initially forked Plate to create Grate, it became apparent really quickly that I would have to completely restructure the HTML in the theme templates, stripping it down to only the actual functional components. 
 
