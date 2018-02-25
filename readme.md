@@ -1,10 +1,5 @@
 <img src="https://studio.bio/images/logo_sm.svg" width=96 />
-<<<<<<< HEAD
 # Grate
-=======
-
-# Grate
-
 A super-minimal WordPress starter theme with CSS Grid for developers.
 
 ## What is Grate?
@@ -28,25 +23,25 @@ Take this example HTML layout:
 
 	<div id="container">
 		<header>
-            		<div id="inner-header" class="clearfix">
+			<div id="inner-header" class="clearfix">
 				<div id="logo"><img src="logo.png" /></div>
-					<h1><?php the_title(); ?></h1>
+				<h1><?php the_title(); ?></h1>
 				<nav></nav>
 			</div>
 		</header>
-		<div id="content">
-			<div id="inner-content" class="clearfix">
-				<main id="main" class="clearfix">
-					<article class="clearfix">
-						<?php the_content(); ?>
-					</article>
-				</main>
-				<aside class="sidebar clearfix">
-					<div id="inner-sidebar" class="clearfix">
-						<?php get_sidebar(); ?>
-					</div>
+	    <div id="content">
+	        <div id="inner-content" class="clearfix">
+			    <main id="main" class="clearfix">
+				    <article class="clearfix">
+					    <?php the_content(); ?>
+				    </article>
+			    </main>
+			    <aside class="sidebar clearfix">
+			        <div id="inner-sidebar" class="clearfix">
+					   <?php get_sidebar(); ?>
+				    </div>
 				</aside>
-			</div>
+		    </div>
 		</div>
 		<footer>
 			<div id="inner-footer" class="clearfix">
@@ -87,6 +82,77 @@ Anyone can read this and know exactly what is going on. This makes sense just as
 We can keep this simple structure and use CSS Grid to do all the heavy lifting for our layout(s) with a few lines of code. No hacks, no calc, no floats. Boom.
 
 <img src="https://studio.bio/images/grate_grid.png" />
+
+
+    // Flexbox fallback for IE10 and Edge
+    .container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    // Let's target browsers who support the latest CSS Grid spec only
+    // (!) don't use @supports(display: grid) {} as this will still return true for IE10 and Edge
+    @supports( grid-area: auto ) {
+     
+        // Let's use a simple base 10 grid.
+        @media only screen and (min-width: 768px) {
+
+            .grid-aside {
+                // create 10 columns of max-width 10em. Simple.
+                grid-template-columns: repeat(10, minmax(auto, 10em));
+                // create 3 rows: header | content/aside | footer; 'auto' makes header and footer the height of the content
+                grid-template-rows: auto 1fr auto;
+                // make the header and footer span the full width
+                #header, #footer {
+                    grid-column: span 10; 
+                }
+                // span our main content from columns 1-6 (7 is the start of the new column)
+                main {
+                    grid-column: 1/7;
+                }
+                // span our aside content from columns 7-10 (can use 11 or -1 for the second value; -1 is the end of the grid)
+                aside {
+                    grid-column: 7/-1;
+                }
+            }
+
+            // grid for full-width page
+            .grid-full {
+                grid-template-columns: 1fr;
+            }
+
+        } // end of media query
+
+        @media only screen and (min-width: 1170px)   {
+
+            .grid-aside {
+                // adjust the grid areas for higher viewports, keeping the content at manageable widths
+                main {
+                    grid-column: 2/7;
+                }
+                aside {
+                    grid-column: 7/10;
+                }
+            }
+            
+        } // end of media query
+
+
+        // grid defaults. 
+        .grid {
+            display: grid;
+            margin: 0 auto;
+            width: 100%;
+            height: 100vh;
+            grid-gap: 1em;
+        }
+
+        .grid-aside {
+            grid-template-rows: auto 1fr auto;
+        }
+
+    }
 
 ### So what does this mean for Grate?
 When I initially forked Plate to create Grate, it became apparent really quickly that I would have to completely restructure the HTML in the theme templates, stripping it down to only the actual functional components. 
