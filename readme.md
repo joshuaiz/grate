@@ -83,7 +83,7 @@ We can keep this simple structure and use CSS Grid to do all the heavy lifting f
 
 <img src="https://studio.bio/images/grate_grid.png" />
 
-
+    ```scss
     // Flexbox fallback for IE10 and Edge
     .container {
         display: flex;
@@ -152,7 +152,8 @@ We can keep this simple structure and use CSS Grid to do all the heavy lifting f
             grid-template-rows: auto 1fr auto;
         }
 
-    }
+    }```
+ 
 
 ### So what does this mean for Grate?
 When I initially forked Plate to create Grate, it became apparent really quickly that I would have to completely restructure the HTML in the theme templates, stripping it down to only the actual functional components. 
