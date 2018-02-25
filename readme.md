@@ -1,16 +1,16 @@
 <img src="https://studio.bio/images/logo_sm.svg" width=96 />
-#Grate
+# Grate
 A super-minimal WordPress starter theme with CSS Grid for developers.
 
-##What is Grate?
+## What is Grate?
 Grate is a fork of [Plate](https://github.com/joshuaiz/plate) that uses explicit semantic HTML markup with CSS Grid. 
 
 Grid + Plate = __Grate__
 
-###tl:dr;
+### tl:dr;
 We need to restructure our markup, stripping it down to functional HTML components to work with CSS Grid the right way.
 
-###A little preface on CSS Grid
+### A little preface on CSS Grid
 CSS Grid is a major milestone for CSS and web development in general and it is finally ready. Yet, to *really* use it properly we can't just assign some new parameters to existing markup in our CSS. Well, we __could__, but we shouldn't. Why not? <em>CSS Grid changes the way we should think about how our HTML is structured.</em>
 
 What does that mean? Well, for the entire history of the web, we have been using extraneous markup just to contain all of our elements that we need to arrange in our layouts, whether we are using floats, or more recently, Flexbox. Flexbox is great (and it works alongside CSS Grid) however it only works in one direction. What's more, to use Flexbox and floats we need to insert wrapper elements in our HTML to contain the child elements we want to align that are totally unrelated to the function of the document. 
@@ -81,10 +81,10 @@ Anyone can read this and know exactly what is going on. This makes sense just as
 
 We can keep this simple structure and use CSS Grid to do all the heavy lifting for our layout(s) with a few lines of code. No hacks, no calc, no floats. Boom.
 
-###So what does this mean for Grate?
+### So what does this mean for Grate?
 When I initially forked Plate to create Grate, it became apparent really quickly that I would have to completely restructure the HTML in the theme templates, stripping it down to only the actual functional components. 
 
-####Liberate the markup!
+#### Liberate the markup!
 With modular, component-based development coming into its own, breaking down the HTML markup into its semantic, functional components is an imperative. Most WordPress sites are not simply blogs and they need to be flexible enough to adapt to any templating system or layout, while still being responsive.
 
 Grate is built with basic, functional HTML components that strip out many of the extra container divs, keeping the markup simple and adaptable. It comes with a default structure much like the example above but with only the base elements, these can be easily swapped out, rearranged or removed completely. Starting with this foundation is good for mobile first, accessibility and SEO at the same time. 
@@ -95,7 +95,7 @@ All that said, for Grate, I've left in the #inner-header and #inner-footer divs 
 
 Just like before, you can use custom page templates to create different layouts. Yet, by using CSS Grid and subgrids, the possibilities are endless and you probably don't need to use as many templates as before. Think about your page templates in a modular, component-based way and with just a couple page setups, you can cover all of the layouts your site needs. If you start out with a good grid to begin with, you could probably handle multiple layouts with just a few lines of scss.
 
-##Notes:
+## Notes:
 
 This is a super early alpha release so I would test this theme out before using it on a production site. It is subject to change a lot and eventually, some of the things in Grate may get merged into a future release of Plate.
 
