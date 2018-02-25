@@ -1,5 +1,10 @@
 <img src="https://studio.bio/images/logo_sm.svg" width=96 />
+<<<<<<< HEAD
 # Grate
+=======
+
+# Grate
+
 A super-minimal WordPress starter theme with CSS Grid for developers.
 
 ## What is Grate?
@@ -23,25 +28,25 @@ Take this example HTML layout:
 
 	<div id="container">
 		<header>
-			<div id="inner-header" class="clearfix">
+            		<div id="inner-header" class="clearfix">
 				<div id="logo"><img src="logo.png" /></div>
-				<h1><?php the_title(); ?></h1>
+					<h1><?php the_title(); ?></h1>
 				<nav></nav>
 			</div>
 		</header>
-	    <div id="content">
-	        <div id="inner-content" class="clearfix">
-			    <main id="main" class="clearfix">
-				    <article class="clearfix">
-					    <?php the_content(); ?>
-				    </article>
-			    </main>
-			    <aside class="sidebar clearfix">
-			        <div id="inner-sidebar" class="clearfix">
-					   <?php get_sidebar(); ?>
-				    </div>
+		<div id="content">
+			<div id="inner-content" class="clearfix">
+				<main id="main" class="clearfix">
+					<article class="clearfix">
+						<?php the_content(); ?>
+					</article>
+				</main>
+				<aside class="sidebar clearfix">
+					<div id="inner-sidebar" class="clearfix">
+						<?php get_sidebar(); ?>
+					</div>
 				</aside>
-		    </div>
+			</div>
 		</div>
 		<footer>
 			<div id="inner-footer" class="clearfix">
@@ -80,6 +85,8 @@ With CSS Grid, we can have a much simpler semantic layout like this:
 Anyone can read this and know exactly what is going on. This makes sense just as a *document*, without any rendering at all. What's great is this structure is fully accessible and without any extra markup, the styles are now functionally completely independent. 
 
 We can keep this simple structure and use CSS Grid to do all the heavy lifting for our layout(s) with a few lines of code. No hacks, no calc, no floats. Boom.
+
+<img src="https://studio.bio/images/grate_grid.png" />
 
 ### So what does this mean for Grate?
 When I initially forked Plate to create Grate, it became apparent really quickly that I would have to completely restructure the HTML in the theme templates, stripping it down to only the actual functional components. 
