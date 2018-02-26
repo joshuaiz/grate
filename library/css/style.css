@@ -700,7 +700,7 @@ For columns we have:
 
 grid-template-columns: 2fr 1fr;
 
-we get two tracks (columns), one 2/3 and the other 1/3.
+we get two tracks (columns), one 2/3 and the other 1/3 (of a total of 1).
 
 No floats, no calc, no need to calculate the percentages at all.
 CSS Grid does all the work. It even accounts for your grid gap (gutters)
@@ -738,10 +738,13 @@ https://medium.com/samsung-internet-dev/common-responsive-layouts-with-css-grid-
 https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Realizing_common_layouts_using_CSS_Grid_Layout
 https://www.smashingmagazine.com/2017/06/building-production-ready-css-grid-layout/
 
-You can utilize subgrids to further layout items within the main
-semantic layout sections. More on the display: subgrid property:
+Soon we will be able to utilize subgrids to further layout items within the main
+semantic layout sections. More on the subgrids property:
 
 https://rachelandrew.co.uk/archives/2017/07/20/why-display-contents-is-not-css-grid-layout-subgrid/
+
+Subgrids have been pushed to CSS Grid v2 so we can't use them yet but we 
+can have nested grid layouts (e.g. grid within a grid).
 
 There are many ways to set up your grid so there are a few options below.
 Use one of those or develop your own - each project might need a different
@@ -1026,6 +1029,10 @@ img {
 /*********************
 LAYOUT & GRID STYLES
 *********************/
+/*
+Now that we have removed some wrapper divs,
+let's just set some base padding.
+*/
 .wrap {
   padding: 1.5em; }
 
@@ -1047,14 +1054,14 @@ a, a:visited {
 /******************************************************************
 HEADING STYLES
 ******************************************************************/
-/* While there are several frameworks for Sass web typography and
+/* 
+While there are several frameworks for Sass web typography and
 baselines like Sassline, Megatype and Gutenberg, those all seemed
 overly complex. What I wanted was simple defaults that looked good
 out of the box without a lot of calculations and segmented mixins.
 
 After searching far and wide, I came across this:
 http://type-scale.com which we used to get our base sizes.
-
 */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   margin: 1.333em 0 0.5em;
@@ -1139,7 +1146,8 @@ NAVIGATION STYLES
 nav li a {
   line-height: 44px; }
 
-/* Where did the nav menu go?
+/* 
+Where did the nav menu go?
 Navigation styles for mobile are now in 767down.scss
 if you need them.
 
@@ -1193,13 +1201,11 @@ style a page via class
 POSTS & CONTENT STYLES
 *********************/
 /* end .hentry */
-/* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
 /* general post style */
 /* general article on a page style */
 /* general style on an attatchment */
 /* sticky post style */
-/* hentry class */
 /* style by category (i.e. category-videos) */
 /* style by tag (i.e. tag-news) */
 /* post meta */
@@ -1314,11 +1320,6 @@ COMMENT STYLES
 COMMENT FORM STYLES
 ******************************************************************/
 /* comment submit button */
-/* comment form title */
-/* cancel comment reply link */
-/* logged in comments */
-/* allowed tags */
-/* no comments */
 /*********************
 SIDEBARS & ASIDES
 *********************/

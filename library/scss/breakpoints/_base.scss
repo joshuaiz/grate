@@ -20,24 +20,21 @@ site-wide stuffs.
 *********************/
 
 html {
-    font-size: 1em;
-
-    // 1em = 16px; Adjust if you want a different baseline.
+    font-size: 1em; // 1em = 16px; Adjust if you want a different baseline.
 }
 
 body {
     color: #333333;
     font-size: 100%;
     font-family: $sans;
-    line-height: 1.5;
-
-    // Adjust for your type
+    line-height: 1.5; // Adjust for your type
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
+// responsive images by default
 img {
-    // responsive images by default
+   
     max-width: 100%;
     height: auto;
 }
@@ -46,6 +43,10 @@ img {
 LAYOUT & GRID STYLES
 *********************/
 
+/*
+Now that we have removed some wrapper divs,
+let's just set some base padding.
+*/
 .wrap {
     padding: 1.5em;
 }
@@ -76,14 +77,14 @@ a, a:visited {
 HEADING STYLES
 ******************************************************************/
 
-/* While there are several frameworks for Sass web typography and
+/* 
+While there are several frameworks for Sass web typography and
 baselines like Sassline, Megatype and Gutenberg, those all seemed
 overly complex. What I wanted was simple defaults that looked good
 out of the box without a lot of calculations and segmented mixins.
 
 After searching far and wide, I came across this:
 http://type-scale.com which we used to get our base sizes.
-
 */
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -131,7 +132,7 @@ h5, .h5 {
 
 h6, .h6 {
     text-transform: uppercase;
-    letter-spacing: 4.333px;
+    letter-spacing: 4.333px; // watch your letter spacing at smaller sizes
 }
 
 /*********************
@@ -151,10 +152,12 @@ HEADER STYLES
     font-size: 2em;
 }
 
+// (these are demo styles - update with your own)
 #logo {
     position: relative;
     left: -4px;
-    margin-right: 8px;
+    margin-right: 
+    8px;
     img {
         width: 44px;
         height: 44px;
@@ -166,7 +169,7 @@ LIST STYLES
 *********************/
 
 ul, ol {
-    // removes default list padding in Safari + Chrome
+    // better default list padding in Safari + Chrome
     -webkit-padding-start: 20px;
 }
 
@@ -192,7 +195,8 @@ nav li a {
     line-height: 44px;
 }
 
-/* Where did the nav menu go?
+/* 
+Where did the nav menu go?
 Navigation styles for mobile are now in 767down.scss
 if you need them.
 
@@ -209,111 +213,76 @@ WORDPRESS BODY CLASSES
 style a page via class
 ********************/
 
-.rtl {}
+.rtl {} /* for sites that are read right to left (i.e. hebrew) */
 
-/* for sites that are read right to left (i.e. hebrew) */
-.home {}
+.home {} /* home page */
 
-/* home page */
-.blog {}
+.blog {} /* blog template page */
 
-/* blog template page */
-.archive {}
+.archive {} /* archive page */
 
-/* archive page */
-.date {}
+.date {} /* date archive page */
 
-/* date archive page */
-.date-paged-1 {}
+.date-paged-1 {} /* replace the number to the corresponding page number */
 
-/* replace the number to the corresponding page number */
-.search {}
+.search {} /* search page */
 
-/* search page */
-.search-results {}
+.search-results {} /* search result page */
 
-/* search result page */
-.search-no-results {}
+.search-no-results {} /* no results search page */
 
-/* no results search page */
-.search-paged-1 {}
+.search-paged-1 {} /* individual paged search (i.e. body.search-paged-3) */
 
-/* individual paged search (i.e. body.search-paged-3) */
-.error404 {}
+.error404 {} /* 404 page */
 
-/* 404 page */
-.single {}
+.single {} /* single post page */
 
-/* single post page */
-.postid-1 {}
+.postid-1 {} /* individual post page by id (i.e. body.postid-73) */
 
-/* individual post page by id (i.e. body.postid-73) */
-.single-paged-1 {}
+.single-paged-1 {} /* individual paged single (i.e. body.single-paged-3) */
 
-/* individual paged single (i.e. body.single-paged-3) */
-.attachment {}
+.attachment {} /* attatchment page */
 
-/* attatchment page */
-.attachmentid-1 {}
+.attachmentid-1 {} /* individual attatchment page (i.e. body.attachmentid-763) */
 
-/* individual attatchment page (i.e. body.attachmentid-763) */
-.attachment-mime-type {}
+.attachment-mime-type {} /* style mime type pages */
 
-/* style mime type pages */
-.author {}
+.author {} /* author page */
 
-/* author page */
-.author-nicename {}
+.author-nicename {} /* user nicename (i.e. body.author-samueladams) */
 
-/* user nicename (i.e. body.author-samueladams) */
-.author-paged-1 {}
+.author-paged-1 {} /* paged author archives (i.e. body.author-paged-4) for page 4 */
 
-/* paged author archives (i.e. body.author-paged-4) for page 4 */
-.category {}
+.category {} /* category page */
 
-/* category page */
-.category-1 {}
+.category-1 {} /* individual category page (i.e. body.category-6) */
 
-/* individual category page (i.e. body.category-6) */
-.category-paged-1 {}
+.category-paged-1 {} /* replace the number to the corresponding page number */
 
-/* replace the number to the corresponding page number */
-.tag {}
+.tag {} /* tag page */
 
-/* tag page */
-.tag-slug {}
+.tag-slug {} /* individual tag page (i.e. body.tag-news) */
 
-/* individual tag page (i.e. body.tag-news) */
-.tag-paged-1 {}
+.tag-paged-1 {} /* replace the number to the corresponding page number */
 
-/* replace the number to the corresponding page number */
-.page-template {}
+.page-template {} /* custom page template page */
 
-/* custom page template page */
-.page-template-page-php {}
+.page-template-page-php {} /* individual page template (i.e. body.page-template-contact-php */
 
-/* individual page template (i.e. body.page-template-contact-php */
-.page-paged-1 {}
+.page-paged-1 {} /* replace the number to the corresponding page number */
 
-/* replace the number to the corresponding page number */
-.page-parent {}
+.page-parent {} /* parent page template */
 
-/* parent page template */
-.page-child {}
+.page-child {} /* child page template */
 
-/* child page template */
-.parent-pageid-1 {}
+.parent-pageid-1 {} /* replace the number to the corresponding page number */
 
-/* replace the number to the corresponding page number */
-.logged-in {}
+.logged-in {} /* if user is logged in */
 
-/* if user is logged in */
-.paged {}
+.paged {} /* paged items like search results or archives */
 
-/* paged items like search results or archives */
-.paged-1 {}
+.paged-1 {} /* individual paged (i.e. body.paged-3) */
 
-/* individual paged (i.e. body.paged-3) */
 
 /*********************
 POSTS & CONTENT STYLES
@@ -325,9 +294,7 @@ POSTS & CONTENT STYLES
     header {}
 
     footer {}
-}
-
-/* end .hentry */
+} /* end .hentry */
 
 .single-title,
 .page-title,
@@ -340,32 +307,20 @@ POSTS & CONTENT STYLES
 .entry-title {}
 
 .archive-title {}
+ 
+.post-id {} /* post by id (i.e. post-3) */
 
-/* want to style individual post classes? Booya! */
-.post-id {}
+.post {} /* general post style */
 
-/* post by id (i.e. post-3) */
-.post {}
+.page {}/* general article on a page style */
 
-/* general post style */
-.page {}
+.attachment {} /* general style on an attatchment */
 
-/* general article on a page style */
-.attachment {}
+.sticky {} /* sticky post style */
 
-/* general style on an attatchment */
-.sticky {}
+.category-slug {} /* style by category (i.e. category-videos) */
 
-/* sticky post style */
-.hentry {}
-
-/* hentry class */
-.category-slug {}
-
-/* style by category (i.e. category-videos) */
-.tag-slug {}
-
-/* style by tag (i.e. tag-news) */
+.tag-slug {} /* style by tag (i.e. tag-news) */
 
 /* post meta */
 .byline {
@@ -458,18 +413,18 @@ POSTS & CONTENT STYLES
     pre {}
 
     code {}
-}
+} /* end .entry-content */
 
-/* end .entry-content */
+
 
 .wp-caption {
     /* images inside wp-caption */
     img {}
 
     p.wp-caption-text {}
-}
+} /* end .wp-caption */
 
-/* end .wp-caption */
+
 
 /* image gallery styles */
 .gallery {
@@ -482,9 +437,9 @@ POSTS & CONTENT STYLES
     dt {}
 
     dd {}
-}
+} /* end .gallery */
 
-/* end .gallery */
+
 
 /* gallery caption styles */
 .gallery-caption {}
@@ -555,9 +510,9 @@ PAGE NAVI STYLES
     .current {
         &:hover, &:focus {}
     }
-}
+} /* end template_page_navi */
 
-/* end template_page_navi */
+
 
 /* fallback previous & next links */
 .wp-prev-next {
@@ -570,9 +525,9 @@ PAGE NAVI STYLES
     .next-link {
         float: right;
     }
-}
+} /* end .wp-prev-next */
 
-/* end .wp-prev-next */
+
 
 /******************************************************************
 COMMENT STYLES
@@ -726,24 +681,18 @@ COMMENT FORM STYLES
 
 .form-allowed-tags {}
 
-/* comment submit button */
-#submit {}
+#submit {} /* comment submit button */
 
-/* comment form title */
-#comment-form-title {}
+#comment-form-title {} 
 
-/* cancel comment reply link */
 #cancel-comment-reply {
     a {}
 }
 
-/* logged in comments */
-.comments-logged-in-as {}
+.comments-logged-in-as {} 
 
-/* allowed tags */
 #allowed_tags {}
 
-/* no comments */
 .nocomments {}
 
 /*********************
