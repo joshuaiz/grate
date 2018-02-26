@@ -39,26 +39,16 @@ select,
 textarea,
 .field {
     display: block;
-
-    // a focused input (or hovered on)
+    
     &:focus,
     &:active {}
 
-    // end hover or focus
-
-    // error notification
     &.error,
     &.is-invalid {}
 
-    // end invalid input
-
-    // success notification
     &.success,
     &.is-valid {}
 
-    // end valid input
-
-    // a disabled input
     &[disabled],
     &.is-disabled {
         opacity: 0.6;
@@ -66,15 +56,9 @@ textarea,
 
         &:focus,
         &:active {}
-
-        // end disabled focus
    
-    }
-
-    // end disabled input
-}
-
-// end input defaults
+    } // end disabled input// a focused input (or hovered on)
+} // end input defaults
 
 // spacing out the password (thx @murtaugh)
 input[type="password"] {
@@ -114,7 +98,7 @@ legend {
     margin-top: 0;
 
     li {
-        margin-left: 2px;
+        margin-left: 2px; 
         list-style-type: none;
     }
 

@@ -14,7 +14,18 @@
 *
 */
 
-// required
+
+/* 
+Content Width is now *required* by theme check. 
+It's meant to limit the width of oEmbeds and the like
+but it applies to *all* content. 
+
+Explicitly setting the width goes against everything in
+responsive design.
+
+Even the Twenty Seventeen theme filters it because it
+is dumb: http://wpnom.com/chapter/define-wordpress-content-width/
+*/
 if ( ! isset( $content_width ) ) $content_width = 1170;
 
 /* LOAD TEMPLATE DEVELOPMENT FUNCTIONS
@@ -27,14 +38,10 @@ if ( ! isset( $content_width ) ) $content_width = 1170;
 */
 require_once( 'library/admin.php' );
 
-
-
-
 /*
 *-------------------------------------------------
 * Grateness
 * Let's get everything up and running.
-* 
 *-------------------------------------------------
 */
 
@@ -315,7 +322,6 @@ function html_schema() {
 }
 
 
-
 /*********************************
 WP_HEAD GOODNESS
 The default wordpress head is a mess. 
@@ -546,7 +552,7 @@ THEME SUPPORT
 // support all of the theme things
 function grate_theme_support() {
 
-    // wp thumbnails (sizes handled in functions.php)
+    // wp thumbnails (see sizes above)
     add_theme_support( 'post-thumbnails' );
 
     // default thumb size
@@ -776,8 +782,8 @@ function grate_style_header() {
 RELATED POSTS FUNCTION
 *********************/
 
-// Related Posts Function (call using plate_related_posts(); )
-// Not sure if this still works.
+// Related Posts Function (call using grate_related_posts(); )
+// Not sure if this still works?? Methinks not.
 function grate_related_posts() {
 
     echo '<ul id="plate-related-posts">';
@@ -823,7 +829,7 @@ function grate_related_posts() {
 
     echo '</ul>';
 
-} /* end plate related posts function */
+} /* end grate related posts function */
 
 
 /*********************
@@ -868,7 +874,7 @@ function grate_page_navi() {
 
 /*
 ****************************************
-*        Grate SPECIAL FUNCTIONS       *
+*       Grate SPECIAL FUNCTIONS        *
 ****************************************
 */
 
@@ -1033,7 +1039,7 @@ endif;
 
 
 // Live Reload for Grunt during development
-//If your site is running locally it will load the livereload js file into the footer. This makes it possible for the browser to reload after a change has been made. 
+// If your site is running locally it will load the livereload js file into the footer. This makes it possible for the browser to reload after a change has been made. 
 if ( in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1')) ) {
 
     function livereload_script() {

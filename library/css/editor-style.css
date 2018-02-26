@@ -15,21 +15,25 @@ http://codex.wordpress.org/Editor_Style
 /* Wrap the entire post style inside the TinyMCE selector, as suggested
 here http://codex.wordpress.org/Function_Reference/add_editor_style */
 body#tinymce.wp-editor {
-  /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+  /*! modern-normalize | MIT License | https://github.com/sindresorhus/modern-normalize */
   /* Document
    ========================================================================== */
   /**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in
- *    IE on Windows Phone and in iOS.
+ * Use a better box model (opinionated).
+ */
+  /**
+ * Use a more readable tab size (opinionated).
+ */
+  /**
+ * Correct the line height in all browsers.
  */
   /* Sections
    ========================================================================== */
   /**
- * Remove the margin in all browsers (opinionated).
+ * Remove the margin in all browsers.
  */
   /**
- * Add the correct display in IE 9-.
+ * Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
  */
   /**
  * Correct the font size and margin on `h1` elements within `section` and
@@ -38,47 +42,19 @@ body#tinymce.wp-editor {
   /* Grouping content
    ========================================================================== */
   /**
- * Add the correct display in IE 9-.
- * 1. Add the correct display in IE.
+ * Add the correct height in Firefox.
  */
-  /**
- * Add the correct margin in IE 8.
- */
-  /**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
-  /**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-  /* Normalize monospace sizing:
-   en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome */
   /* Text-level semantics
    ========================================================================== */
   /**
- * 1. Remove the gray background on active links in IE 10.
- * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
- */
-  /**
- * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
-  /**
- * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ * Add the correct text decoration in Chrome, Edge, and Safari.
  */
   /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
   /**
- * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
  * 2. Correct the odd `em` font sizing in all browsers.
- */
-  /**
- * Add the correct font style in Android 4.3-.
- */
-  /**
- * Add the correct background and color in IE 9-.
  */
   /**
  * Add the correct font size in all browsers.
@@ -87,38 +63,18 @@ body#tinymce.wp-editor {
  * Prevent `sub` and `sup` elements from affecting the line height in
  * all browsers.
  */
-  /* Embedded content
-   ========================================================================== */
-  /**
- * Add the correct display in IE 9-.
- */
-  /**
- * Add the correct display in iOS 4-7.
- */
-  /**
- * Remove the border on images inside links in IE 10-.
- */
-  /**
- * Hide the overflow in IE.
- */
   /* Forms
    ========================================================================== */
   /**
- * 1. Change the font styles in all browsers (opinionated).
+ * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
  */
   /**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
-  /**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * Remove the inheritance of text transform in Edge and Firefox.
  * 1. Remove the inheritance of text transform in Firefox.
  */
   /**
- * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
- *    controls in Android 4.
- * 2. Correct the inability to style clickable types in iOS and Safari.
+ * Correct the inability to style clickable types in iOS and Safari.
  */
   /**
  * Remove the inner border and padding in Firefox.
@@ -130,21 +86,11 @@ body#tinymce.wp-editor {
  * Correct the padding in Firefox.
  */
   /**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
+ * Remove the padding so developers are not caught out when they zero out
  *    `fieldset` elements in all browsers.
  */
   /**
- * 1. Add the correct display in IE 9-.
- * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
-  /**
- * Remove the default vertical scrollbar in IE.
- */
-  /**
- * 1. Add the correct box sizing in IE 10-.
- * 2. Remove the padding in IE 10-.
+ * Add the correct vertical alignment in Chrome and Firefox.
  */
   /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
@@ -154,7 +100,7 @@ body#tinymce.wp-editor {
  * 2. Correct the outline style in Safari.
  */
   /**
- * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ * Remove the inner padding in Chrome and Safari on macOS.
  */
   /**
  * 1. Correct the inability to style clickable types in iOS and Safari.
@@ -163,24 +109,7 @@ body#tinymce.wp-editor {
   /* Interactive
    ========================================================================== */
   /*
- * Add the correct display in IE 9-.
- * 1. Add the correct display in Edge, IE, and Firefox.
- */
-  /*
- * Add the correct display in all browsers.
- */
-  /* Scripting
-   ========================================================================== */
-  /**
- * Add the correct display in IE 9-.
- */
-  /**
- * Add the correct display in IE.
- */
-  /* Hidden
-   ========================================================================== */
-  /**
- * Add the correct display in IE 10-.
+ * Add the correct display in Chrome and Safari.
  */
   /******************************************************************
 Site Name:
@@ -392,83 +321,42 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 	H1, H2, H3, H4, H5 STYLES
 	******************************************************************/ }
   body#tinymce.wp-editor html {
-    line-height: 1.15;
-    /* 1 */
-    -ms-text-size-adjust: 100%;
-    /* 2 */
-    -webkit-text-size-adjust: 100%;
-    /* 2 */ }
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+  body#tinymce.wp-editor *,
+  body#tinymce.wp-editor *::before,
+  body#tinymce.wp-editor *::after {
+    -webkit-box-sizing: inherit;
+            box-sizing: inherit; }
+  body#tinymce.wp-editor :root {
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4; }
+  body#tinymce.wp-editor html {
+    line-height: 1.15; }
   body#tinymce.wp-editor body {
     margin: 0; }
-  body#tinymce.wp-editor article,
-  body#tinymce.wp-editor aside,
-  body#tinymce.wp-editor footer,
-  body#tinymce.wp-editor header,
-  body#tinymce.wp-editor nav,
-  body#tinymce.wp-editor section {
-    display: block; }
+  body#tinymce.wp-editor body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; }
   body#tinymce.wp-editor h1 {
     margin: 0.67em 0;
     font-size: 2em; }
-  body#tinymce.wp-editor figcaption,
-  body#tinymce.wp-editor figure,
-  body#tinymce.wp-editor main {
-    /* 1 */
-    display: block; }
-  body#tinymce.wp-editor figure {
-    margin: 1em 40px; }
   body#tinymce.wp-editor hr {
-    overflow: visible;
-    /* 2 */
-    -webkit-box-sizing: content-box;
-            box-sizing: content-box;
-    /* 1 */
-    height: 0;
-    /* 1 */ }
-  body#tinymce.wp-editor pre {
-    font-size: 1em;
-    /* 2 */
-    font-family: monospace, monospace;
-    /* 1 */ }
-  body#tinymce.wp-editor pre, body#tinymce.wp-editor code, body#tinymce.wp-editor kbd, body#tinymce.wp-editor samp {
-    font-family: monospace, sans-serif; }
-  body#tinymce.wp-editor pre {
-    padding: 15px;
-    /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
-    white-space: pre;
-    white-space: pre-wrap;
-    word-wrap: break-word; }
-  body#tinymce.wp-editor a {
-    background-color: transparent;
-    /* 1 */
-    -webkit-text-decoration-skip: objects;
-    /* 2 */ }
+    height: 0; }
   body#tinymce.wp-editor abbr[title] {
-    border-bottom: none;
-    /* 1 */
-    text-decoration: underline;
-    /* 2 */
     -webkit-text-decoration: underline dotted;
-            text-decoration: underline dotted;
-    /* 2 */ }
-  body#tinymce.wp-editor b,
-  body#tinymce.wp-editor strong {
-    font-weight: inherit; }
+            text-decoration: underline dotted; }
   body#tinymce.wp-editor b,
   body#tinymce.wp-editor strong {
     font-weight: bolder; }
   body#tinymce.wp-editor code,
   body#tinymce.wp-editor kbd,
-  body#tinymce.wp-editor samp {
+  body#tinymce.wp-editor samp,
+  body#tinymce.wp-editor pre {
     font-size: 1em;
     /* 2 */
-    font-family: monospace, monospace;
+    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
     /* 1 */ }
-  body#tinymce.wp-editor dfn {
-    font-style: italic; }
-  body#tinymce.wp-editor mark {
-    background-color: #ff0;
-    color: #000; }
   body#tinymce.wp-editor small {
     font-size: 80%; }
   body#tinymce.wp-editor sub,
@@ -481,16 +369,6 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
     bottom: -0.25em; }
   body#tinymce.wp-editor sup {
     top: -0.5em; }
-  body#tinymce.wp-editor audio,
-  body#tinymce.wp-editor video {
-    display: inline-block; }
-  body#tinymce.wp-editor audio:not([controls]) {
-    display: none;
-    height: 0; }
-  body#tinymce.wp-editor img {
-    border-style: none; }
-  body#tinymce.wp-editor svg:not(:root) {
-    overflow: hidden; }
   body#tinymce.wp-editor button,
   body#tinymce.wp-editor input,
   body#tinymce.wp-editor optgroup,
@@ -500,107 +378,53 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
     /* 2 */
     font-size: 100%;
     /* 1 */
-    font-family: sans-serif;
+    font-family: inherit;
     /* 1 */
     line-height: 1.15;
     /* 1 */ }
-  body#tinymce.wp-editor button,
-  body#tinymce.wp-editor input {
-    /* 1 */
-    overflow: visible; }
   body#tinymce.wp-editor button,
   body#tinymce.wp-editor select {
     /* 1 */
     text-transform: none; }
   body#tinymce.wp-editor button,
-  body#tinymce.wp-editor html [type="button"],
-  body#tinymce.wp-editor [type="reset"],
-  body#tinymce.wp-editor [type="submit"] {
-    -webkit-appearance: button;
-    /* 2 */ }
+  body#tinymce.wp-editor [type='button'],
+  body#tinymce.wp-editor [type='reset'],
+  body#tinymce.wp-editor [type='submit'] {
+    -webkit-appearance: button; }
   body#tinymce.wp-editor button::-moz-focus-inner,
-  body#tinymce.wp-editor [type="button"]::-moz-focus-inner,
-  body#tinymce.wp-editor [type="reset"]::-moz-focus-inner,
-  body#tinymce.wp-editor [type="submit"]::-moz-focus-inner {
+  body#tinymce.wp-editor [type='button']::-moz-focus-inner,
+  body#tinymce.wp-editor [type='reset']::-moz-focus-inner,
+  body#tinymce.wp-editor [type='submit']::-moz-focus-inner {
     padding: 0;
     border-style: none; }
   body#tinymce.wp-editor button:-moz-focusring,
-  body#tinymce.wp-editor [type="button"]:-moz-focusring,
-  body#tinymce.wp-editor [type="reset"]:-moz-focusring,
-  body#tinymce.wp-editor [type="submit"]:-moz-focusring {
+  body#tinymce.wp-editor [type='button']:-moz-focusring,
+  body#tinymce.wp-editor [type='reset']:-moz-focusring,
+  body#tinymce.wp-editor [type='submit']:-moz-focusring {
     outline: 1px dotted ButtonText; }
   body#tinymce.wp-editor fieldset {
     padding: 0.35em 0.75em 0.625em; }
   body#tinymce.wp-editor legend {
-    display: table;
-    /* 1 */
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    /* 1 */
-    padding: 0;
-    /* 3 */
-    max-width: 100%;
-    /* 1 */
-    color: inherit;
-    /* 2 */
-    white-space: normal;
-    /* 1 */ }
+    padding: 0; }
   body#tinymce.wp-editor progress {
-    display: inline-block;
-    /* 1 */
-    vertical-align: baseline;
-    /* 2 */ }
-  body#tinymce.wp-editor textarea {
-    overflow: auto; }
-  body#tinymce.wp-editor [type="checkbox"],
-  body#tinymce.wp-editor [type="radio"] {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    /* 1 */
-    padding: 0;
-    /* 2 */ }
-  body#tinymce.wp-editor [type="number"]::-webkit-inner-spin-button,
-  body#tinymce.wp-editor [type="number"]::-webkit-outer-spin-button {
+    vertical-align: baseline; }
+  body#tinymce.wp-editor [type='number']::-webkit-inner-spin-button,
+  body#tinymce.wp-editor [type='number']::-webkit-outer-spin-button {
     height: auto; }
-  body#tinymce.wp-editor [type="search"] {
+  body#tinymce.wp-editor [type='search'] {
     outline-offset: -2px;
     /* 2 */
     -webkit-appearance: textfield;
     /* 1 */ }
-  body#tinymce.wp-editor [type="search"]::-webkit-search-cancel-button,
-  body#tinymce.wp-editor [type="search"]::-webkit-search-decoration {
+  body#tinymce.wp-editor [type='search']::-webkit-search-decoration {
     -webkit-appearance: none; }
   body#tinymce.wp-editor ::-webkit-file-upload-button {
     font: inherit;
     /* 2 */
     -webkit-appearance: button;
     /* 1 */ }
-  body#tinymce.wp-editor details,
-  body#tinymce.wp-editor menu {
-    display: block; }
   body#tinymce.wp-editor summary {
     display: list-item; }
-  body#tinymce.wp-editor canvas {
-    display: inline-block; }
-  body#tinymce.wp-editor template {
-    display: none; }
-  body#tinymce.wp-editor [hidden] {
-    display: none; }
-  body#tinymce.wp-editor .clearfix, body#tinymce.wp-editor .cf {
-    zoom: 1; }
-    body#tinymce.wp-editor .clearfix:before, body#tinymce.wp-editor .clearfix:after, body#tinymce.wp-editor .cf:before, body#tinymce.wp-editor .cf:after {
-      display: table;
-      content: ""; }
-    body#tinymce.wp-editor .clearfix:after, body#tinymce.wp-editor .cf:after {
-      clear: both; }
-  body#tinymce.wp-editor * {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box; }
-  body#tinymce.wp-editor .image-replacement,
-  body#tinymce.wp-editor .ir {
-    overflow: hidden;
-    text-indent: 100%;
-    white-space: nowrap; }
   body#tinymce.wp-editor p {
     -ms-word-wrap: break-word;
     word-wrap: break-word;

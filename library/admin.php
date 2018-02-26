@@ -1,6 +1,6 @@
 <?php
 /*------------------------------------
- * Theme: Plate by studio.bio 
+ * Theme: Grate by studio.bio 
  * File: Admin custom functions
  * Author: Joshua Michaels
  * URI: https://studio.bio/themes/plate
@@ -22,7 +22,6 @@ Eddie's old function wasn't working on some widgets so I've updated it
 This cleans up a lot of the widgets on the Dashboard page. If you want
 to have any of these back, comment them out.
 */
-
 
 add_action('wp_dashboard_setup', 'grate_remove_dashboard_widgets');
 
@@ -48,10 +47,10 @@ CUSTOM LOGIN PAGE
 Customize it, we don't criticize it.
 *********************/
 
-// calling your own login css so you can style it
-
-//Updated to proper 'enqueue' method
-//http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
+/*
+Calling your own login css so you can style it. Updated to proper 'enqueue' method
+http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
+*/
 function grate_login_css() {
 	wp_enqueue_style( 'plate_login_css', get_template_directory_uri() . '/library/css/login.css', false );
 }
@@ -86,7 +85,6 @@ function grate_admin_css() {
     wp_enqueue_style( 'grate_admin_css', get_template_directory_uri() . '/library/css/admin.css', false );
 }
 add_action( 'admin_enqueue_scripts', 'grate_admin_css', 10 );
-
 
 
 // Custom Backend Footer
